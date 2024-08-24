@@ -1,9 +1,12 @@
 {
+  "type": "module",
   "name": "prueba_tecnica_tubuntu_backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
+    "build": "npx tsc",
+    "dev": "tsx watch ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,7 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.5.0",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.17.0",
     "typescript": "^5.5.4"
   }
 }
