@@ -1,26 +1,29 @@
-# Use the official Node.js image.
-FROM node:18
+# Use a Node.js base image
+FROM node:18-alpine
 
-# Install pnpm
-RUN npm install -g pnpm
-
-# Create and set the working directory
+# Set the working directory to /app
 WORKDIR /app
 
-# Copy package.json and pnpm-lock.yaml
+# Copy the package.json and pnpm-lock.yaml files
 COPY package.json pnpm-lock.yaml ./
 
-# Install dependencies using pnpm
+# Install pnpm globally
+RUN npm install -g pnpm
+
+# Install dependencies
 RUN pnpm install
 
-# Copy the rest of the application code
+# Copy the rest of the application code to the container
 COPY . .
 
-# Build the TypeScript code
-RUN pnpm build
+# Copy the .env file to the container
+COPY .env .env
 
-# Expose the port
+# Compile the TypeScript project (if necessary)
+RUN pnpm run build
+
+# Expose the port used by the application
 EXPOSE 3000
 
-# Run the application
-CMD ["node", "dist/server.js"]
+# Specify the command to run the application
+CMD ["pnpm", "run", "dev"]
