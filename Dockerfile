@@ -16,9 +16,6 @@ RUN pnpm install
 # Copy the rest of the application code to the container
 COPY . .
 
-# Copy the .env file to the container
-COPY .env .env
-
 # Compile the TypeScript project (if necessary)
 RUN pnpm run build
 
