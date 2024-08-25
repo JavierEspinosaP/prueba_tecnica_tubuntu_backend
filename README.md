@@ -118,7 +118,3 @@ To build and run the Docker container:
 2. **Run the Docker container:**
    - docker run -d -p 3000:3000 pokemon-api-backend
 
-
-## License
-
-This project is licensed under the ISC License.
