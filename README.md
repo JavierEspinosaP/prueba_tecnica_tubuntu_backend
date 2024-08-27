@@ -113,8 +113,8 @@ The project is Dockerized using a Dockerfile, which allows the application to be
 To build and run the Docker container:
 
 1. **Build the Docker image:**
-   - docker build -t pokemon-api-backend .
+   - docker build -t prueba_tecnica_tubuntu_backend .
 
 2. **Run the Docker container:**
-   - docker run -d -p 3000:3000 pokemon-api-backend
+   - docker run -d -p 3000:3000 prueba_tecnica_tubuntu_backend
 
